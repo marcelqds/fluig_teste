@@ -1,0 +1,62 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "GitNomes",
+    "version" : "v2",
+    "title" : "GitNomes  API"
+  },
+  "host" : "",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "ListaNomes",
+    "description" : "Recurso para listar nomes"
+  }],
+  "paths" : {
+    "/dataset.js" : {
+      "get" : {
+        "tags" : [ "GitNomes" ],
+        "summary" : "Lista de Nomes",
+        "description" : "",
+        "operationId" : "listaNomes",
+        "produces" : [ "application/json; charset=UTF-8" ],
+        "parameters" : [],
+        
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "schema" : {
+              "$ref" : "#/definitions/ProcessoListaNomes"
+            }
+          }
+        }
+      }
+    }
+  }, 
+  "definitions" : {
+    "ProcessoNome" : {
+      "type" : "object",
+      "properties" : {
+        "nome" : {
+          "type" : "string",          
+          "description" : "Nome para identificação"
+        },
+        "idade" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Idade da pessoa"
+        }
+      }      
+    },
+    "ProcessoListaNomes" : {
+      "type" : "object",
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ProcessoNome"
+          }
+        }
+      }
+    }
+  }
+}
