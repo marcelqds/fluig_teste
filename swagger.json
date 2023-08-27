@@ -6,7 +6,7 @@
     "title" : "GitNomes  API"
   },
   "host" : "",
-  "basePath" : "/",
+  "basePath" : "/fluig_teste/",
   "tags" : [ {
     "name" : "ListaNomes",
     "description" : "Recurso para listar nomes"
